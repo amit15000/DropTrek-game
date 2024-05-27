@@ -44,6 +44,7 @@ const MULTIPLIERS: { [key: number]: number } = {
   19: 20,
 };
 
+//Obstacles Generation
 export const createObstacles = (): Obstacle[] => {
   const obstacles: Obstacle[] = [];
   const rows = 20;
@@ -59,4 +60,21 @@ export const createObstacles = (): Obstacle[] => {
       obstacles.push({ x: pad(x), y: pad(y), radius: obstacleRadius });
     }
   }
+  return obstacles;
+};
+
+// Sinks Generator
+export const createSinks = (): Sink[] => {
+  const sinks = [];
+  const spacing = obstacleRadius * 2;
+  const width = SINK_WIDTH;
+  const y = HEIGHT - 100;
+
+  for (let i = 0; i < NUM_SINSK; i++) {
+    const x =
+      WIDTH / 2 + SINK_WIDTH * (Math.floor(NUM_SINSK / 2) - i) - spacing * 1.5;
+
+    sinks.push({ x, y, width, height: width, multiplier: MULTIPLIERS[i + 1] });
+  }
+  return sinks;
 };
