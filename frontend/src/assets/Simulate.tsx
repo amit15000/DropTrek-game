@@ -19,14 +19,6 @@ export const Simulate = () => {
     if (canvasRef.current) {
       const ballManager = new BallManager(
         canvasRef.current as HTMLCanvasElement
-        // (index: number, startX?: number) => {
-        //   setOutputs((outputs: any) => {
-        //     return {
-        //       ...outputs,
-        //       [index]: [...(outputs[index] as number[]), startX],
-        //     };
-        //   });
-        // }
       );
       simulate(ballManager);
 
