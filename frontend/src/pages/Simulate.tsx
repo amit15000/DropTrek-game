@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { BallManager } from "../game/classes/BallManager";
 import { pad } from "../game/padding";
 import { WIDTH } from "../game/Constants";
-import { Simulate } from "./Simulate";
 
-function Home() {
-  const canvasRef = useRef<unknown>();
+export const Simulate = () => {
+  const canvasRef = useRef<any>();
   let [outputs, setOutputs] = useState<{ [key: number]: number[] }>({
     0: [],
     1: [],
@@ -25,13 +24,11 @@ function Home() {
     15: [],
     16: [],
     17: [],
-    18: [],
-    19: [],
-    20: [],
   });
+
   async function simulate(ballManager: BallManager) {
-    let i = 1;
-    while (i) {
+    let i = 0;
+    while (1) {
       i++;
       ballManager.addBall(pad(WIDTH / 2 + 20 * (Math.random() - 0.5)));
       await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -60,14 +57,8 @@ function Home() {
   }, [canvasRef]);
 
   return (
-    <div className="">
-      <div className="flex flex-col lg:flex-row  items-center justify-between ">
-        <Simulate />
-        {/* <Quotes /> */}
-      </div>
-      {/* <FoundIssue /> */}
+    <div className="flex flex-col items-center justify-center">
+      <canvas ref={canvasRef} width="800" height="800"></canvas>
     </div>
   );
-}
-
-export default Home;
+};

@@ -9,7 +9,7 @@ import { createObstacles, createSinks, Obstacle, Sink } from "../Objects";
 import { pad, unpad } from "../padding";
 import { Ball } from "./Ball";
 
-export class BallManger {
+export class BallManager {
   private balls: Ball[]; //Ball class
   private canvasRef: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
