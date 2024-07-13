@@ -33,7 +33,7 @@ export class BallManager {
 
   addBall(startX?: number) {
     const newBall = new Ball(
-      startX || pad(WIDTH / 2 + 13),
+      startX || pad(WIDTH / 2),
       pad(50),
       ballRadius,
       "red",
@@ -48,7 +48,7 @@ export class BallManager {
     this.balls.push(newBall);
   }
   drawObstacles() {
-    this.ctx.fillStyle = "white";
+    this.ctx.fillStyle = "green";
     this.obstacles.forEach((obstacle) => {
       this.ctx.beginPath();
       this.ctx.arc(
@@ -62,6 +62,7 @@ export class BallManager {
       this.ctx.closePath();
     });
   }
+
   getColor(index: number) {
     if (index < 5 || index > this.sinks.length - 5) {
       return { background: "#ff003f", color: "white" };

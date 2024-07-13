@@ -2,7 +2,7 @@ import { pad } from "./padding";
 
 export const WIDTH = 800;
 export const HEIGHT = 800;
-export const ballRadius = 800;
+export const ballRadius = 7;
 export const obstacleRadius = 4;
 
 export const gravity = pad(0.6);

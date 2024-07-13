@@ -62,7 +62,6 @@ export const createObstacles = (): Obstacle[] => {
   }
   return obstacles;
 };
-
 // Sinks Generator
 export const createSinks = (): Sink[] => {
   const sinks = [];
