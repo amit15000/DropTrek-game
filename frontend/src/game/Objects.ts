@@ -53,7 +53,7 @@ export const createObstacles = (): Obstacle[] => {
     const numObstacles = row + 1;
     const y = row * 35; //verticle gap b/w rows
 
-    const spacing = 36; //horizontal gap b/t obstacles
+    const spacing = 40; //horizontal gap b/t obstacles
 
     for (let col = 0; col < numObstacles; col++) {
       const x = WIDTH / 2 - spacing * (col - row / 2);
@@ -71,7 +71,7 @@ export const createSinks = (): Sink[] => {
 
   for (let i = 0; i < NUM_SINSK; i++) {
     const x =
-      WIDTH / 2 + SINK_WIDTH * (Math.floor(NUM_SINSK / 2) - i) - spacing * 1.5;
+      WIDTH / 2 + SINK_WIDTH * (Math.floor(NUM_SINSK / 2) - i) - spacing * 2;
 
     sinks.push({ x, y, width, height: width, multiplier: MULTIPLIERS[i + 1] });
   }

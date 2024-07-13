@@ -7,7 +7,7 @@ export const Simulate = () => {
   const canvasRef = useRef<any>();
 
   async function simulate(ballManager: BallManager) {
-    let i = 1 - 9;
+    let i = 1;
     while (i) {
       i++;
       ballManager.addBall(pad(WIDTH / 2 + 20 * (Math.random() - 0.5)));

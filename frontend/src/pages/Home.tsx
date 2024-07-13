@@ -2,7 +2,8 @@
 // import { BallManager } from "../game/classes/BallManager";
 // import { pad } from "../game/padding";
 // import { WIDTH } from "../game/Constants";
-import { Simulate } from "./Simulate";
+
+import { Simulate } from "../assets/Simulate";
 
 function Home() {
   // const canvasRef = useRef<unknown>();
@@ -60,7 +61,7 @@ function Home() {
   // }, [canvasRef]);
 
   return (
-    <div className="flex">
+    <div className="flex px-10">
       <div className="flex flex-col lg:flex-row  items-center justify-between ">
         <Simulate />
         {/* <Quotes /> */}
