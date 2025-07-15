@@ -3,7 +3,7 @@ import { BallManager } from "../game/classes/BallManager";
 import axios from "axios";
 
 export function Game() {
-  const baseURL = "http://localhost:3000";
+  const baseURL = "https://droptrek.onrender.com";
   const [ballManager, setBallManager] = useState<BallManager>();
   const canvasRef = useRef<never>();
 
