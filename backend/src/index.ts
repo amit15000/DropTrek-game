@@ -1,7 +1,6 @@
 import express from "express";
-
-import cors from "cors";
 import { outcomes } from "./outcomes";
+import cors from "cors";
 
 const app = express();
 app.use(cors());
@@ -52,9 +51,5 @@ app.post("/game", (req, res) => {
     pattern,
   });
 });
-app.get("/", (req, res) => {
-  res.json({
-    Message: "DropTrek Server is running",
-  });
-});
+
 app.listen(3000);
