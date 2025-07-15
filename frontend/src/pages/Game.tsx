@@ -5,7 +5,7 @@ import axios from "axios";
 export function Game() {
   const baseURL = "https://droptrek.onrender.com";
   const [ballManager, setBallManager] = useState<BallManager>();
-  const canvasRef = useRef<unknown>();
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     if (canvasRef.current) {

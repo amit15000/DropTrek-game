@@ -5,7 +5,8 @@ import { pad } from "../game/padding";
 import { WIDTH } from "../game/Constants";
 
 export function Simulation() {
-  const canvasRef = useRef<unknown>();
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  // eslint-disable-next-line prefer-const
   let [outputs, setOutputs] = useState<{ [key: number]: number[] }>({
     0: [],
     1: [],
