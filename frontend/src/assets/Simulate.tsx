@@ -4,7 +4,7 @@ import { pad } from "../game/padding";
 import { WIDTH } from "../game/Constants";
 
 export const Simulate = () => {
-  const canvasRef = useRef<any>();
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   async function simulate(ballManager: BallManager) {
     let i = 1;

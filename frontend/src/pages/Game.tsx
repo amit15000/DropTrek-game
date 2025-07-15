@@ -3,9 +3,9 @@ import { BallManager } from "../game/classes/BallManager";
 import axios from "axios";
 
 export function Game() {
-  const baseURL = "https://droptrek.onrender.com";
+  const baseURL = "http://localhost:3000";
   const [ballManager, setBallManager] = useState<BallManager>();
-  const canvasRef = useRef<never>();
+  const canvasRef = useRef<unknown>();
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -16,23 +16,21 @@ export function Game() {
     }
   }, [canvasRef]);
 
-  const clickHandler = async () => {
-    const response = await axios.post(`${baseURL}/game`, {
-      data: 1,
-    });
-    if (ballManager) {
-      ballManager.addBall(response.data.point);
-    }
-  };
-
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center">
       <canvas ref={canvasRef} width="800" height="800"></canvas>
       <button
-        onClick={clickHandler}
         className="px-2 py-2 text-2xl bg-green-500 text-white font-bold rounded"
+        onClick={async () => {
+          const response = await axios.post(`${baseURL}/game`, {
+            data: 1,
+          });
+          if (ballManager) {
+            ballManager.addBall(response.data.point);
+          }
+        }}
       >
-        Add Ball
+        Add ball
       </button>
     </div>
   );
